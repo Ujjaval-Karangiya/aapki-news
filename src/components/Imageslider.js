@@ -42,7 +42,7 @@ export default function InfiniteImageSlider() {
     useEffect(() => {
         const fetchImages = async () => {
             try {
-                const response = await fetch(`https://gnewsapi.io/api/v4/top-headlines?country=in&token=${process.env.REACT_APP_NEWS_API}`);
+                const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.REACT_APP_NEWS_API}`);
                 const data = await response.json();
                 const filtered = data.articles.filter(
                     (article) => article.urlToImage && article.title && article.description
