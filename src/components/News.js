@@ -88,7 +88,7 @@ const updateNews = async () => {
                 next={fetchMoreData}
                 hasMore={articles.length < 100}
                 loader={<Spinner />}
-            />
+            >
 
             <div className="container">
 
@@ -100,7 +100,7 @@ const updateNews = async () => {
                     })}
                 </div>
             </div>
-        </InfiniteScroll >
+        </InfiniteScroll>
             </>
         )
     
