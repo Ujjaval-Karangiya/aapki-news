@@ -5,11 +5,10 @@ import NavBar from './components/NavBar';
 import News from './components/News';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
-import ImageSlider from './components/Imageslider';
 
 const App = ()=> {
   const pageSize = 5;
-  const apiKey = process.env.REACT_APP_NEWS_API
+    const apiKey = "pub_590a294a9e544a5984a2ecdc09ba1742"
   const [progress, setProgress] = useState(0)
  
     return (
@@ -21,10 +20,7 @@ const App = ()=> {
         color='#f11946'
         progress={progress} 
       />
-      <ImageSlider/>
         <Switch>
-          <Route exact path="/"><News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="us" category="general"/></Route> 
-          <Route exact path="/general"><News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="us" category="general"/></Route> 
           <Route exact path="/business"><News setProgress={setProgress} apiKey={apiKey} key="business" pageSize={pageSize} country="us" category="business"/></Route> 
           <Route exact path="/entertainment"><News setProgress={setProgress} apiKey={apiKey} key="entertainment" pageSize={pageSize} country="us" category="entertainment"/></Route> 
           <Route exact path="/health"><News setProgress={setProgress} apiKey={apiKey} key="health" pageSize={pageSize} country="us" category="health"/></Route> 
